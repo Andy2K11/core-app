@@ -3,12 +3,24 @@
 // Only include this once, no where else
 @include mat-core();
 
-$core-primary: mat-palette($mat-green);
-$core-secondary: mat-palette($mat-indigo);
-$core-accent: mat-palette($mat-blue);
+// $mat-color, $default: 500, $lighter: 100, $darker: 700
+$core-primary: mat-palette($mat-blue);
+$core-accent: mat-palette($mat-orange);
 $core-warn: mat-palette($mat-red);
 
-$core-theme: mat-light-theme($core-primary, $core-accent, $core-warn);
-$core-dark-theme: mat-light-dark($core-primary, $core-accent, $core-warn);
+$core-light-theme: mat-light-theme($core-primary, $core-accent, $core-warn);
 
-@include angular-material-theme($core-theme);
+// **** dark theme **************************
+$core-dark-primary: mat-palette($mat-purple);
+$core-dark-accent: mat-palette($mat-yellow);
+$core-dark-warn: mat-palette($mat-red);
+
+$core-dark-theme: mat-dark-theme($core-dark-primary, $core-dark-accent, $core-dark-warn);
+
+.core-light {
+  @include angular-material-theme($core-light-theme);
+}
+
+.core-dark {
+  @include angular-material-theme($core-dark-theme);
+}

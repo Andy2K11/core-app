@@ -7,20 +7,20 @@
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
 
+span > a {
+  text-decoration: none;
+}
 
 @mixin core-theme($theme) {
   $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
   span, span > a {
-    color: mat-color($primary, 'A100-contrast');  // use $theme passed in through mixin
-    text-decoration: none;
+    color: mat-color($foreground, 'text');
   }
 }
-
 @import "../../../assets/core-theme.scss";
-@include core-theme($core-theme);
-
-// For demo only
-span > a {
-  background-color: mat-color($core-accent);    // directly reference core-theme.scss variable
-}
+@include core-theme($core-dark-theme);
