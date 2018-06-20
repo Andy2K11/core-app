@@ -6,3 +6,21 @@
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
+
+
+@mixin core-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  span, span > a {
+    color: mat-color($primary, 'A100-contrast');  // use $theme passed in through mixin
+    text-decoration: none;
+  }
+}
+
+@import "../../../assets/core-theme.scss";
+@include core-theme($core-theme);
+
+// For demo only
+span > a {
+  background-color: mat-color($core-accent);    // directly reference core-theme.scss variable
+}
