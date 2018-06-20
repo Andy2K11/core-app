@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
+import { AuthModule } from './auth/auth.module';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { HeaderModule } from './header/header.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    HeaderModule
+    MatButtonModule,
+    HeaderModule,
+    AuthModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,6 +24,11 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Application Title</span>
+      <span class="spacer"></span>
+      <span>
+        <a [routerLink]="['/auth/login']">Login</a>
+      </span>
     </mat-toolbar>
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
