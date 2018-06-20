@@ -8,3 +8,18 @@ body { margin: 0; }
 .spacer {
   flex: 1 1 auto;
 }
+
+@mixin core-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  span > a {
+    // color: mat-color($foreground, 'text');   // yes
+    color: $light-primary-text;                 // yes
+  }
+}
+@import "./assets/core-theme.scss";
+@include core-theme($core-dark-theme);

@@ -5,14 +5,14 @@
 @include mat-core();
 
 // $mat-color, $default: 500, $lighter: 100, $darker: 700
-$core-primary: mat-palette($mat-blue);
+$core-primary: mat-palette($core-redbrick);
 $core-accent: mat-palette($mat-orange);
 $core-warn: mat-palette($mat-red);
 
 $core-light-theme: mat-light-theme($core-primary, $core-accent, $core-warn);
 
 // **** dark theme **************************
-$core-dark-primary: mat-palette($core-charcoal);
+$core-dark-primary: mat-palette($mat-brown);
 $core-dark-accent: mat-palette($mat-yellow);
 $core-dark-warn: mat-palette($mat-red);
 

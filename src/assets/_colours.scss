@@ -30,3 +30,38 @@ $core-charcoal: (
     A700: $light-primary-text,
   )
 );
+
+$core-redbrick: (
+  50: #f8ecef,
+  100: #eed0d6,
+  200: #d79fa5,
+  300: #c57d83,
+  400: #ce6369,
+  500: #d25858,
+  600: #c25054,
+  700: #b0484d,
+  800: #a24346,
+  900: #903e3e,
+  A100: #f8ecef,
+  A200: #d79fa5,
+  A400: #ce6369,
+  A700: #903e3e,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+
