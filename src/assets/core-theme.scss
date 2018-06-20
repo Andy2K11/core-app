@@ -1,4 +1,5 @@
 @import "~@angular/material/theming";
+@import "colours";
 
 // Only include this once, no where else
 @include mat-core();
@@ -11,7 +12,7 @@ $core-warn: mat-palette($mat-red);
 $core-light-theme: mat-light-theme($core-primary, $core-accent, $core-warn);
 
 // **** dark theme **************************
-$core-dark-primary: mat-palette($mat-purple);
+$core-dark-primary: mat-palette($core-charcoal);
 $core-dark-accent: mat-palette($mat-yellow);
 $core-dark-warn: mat-palette($mat-red);
 
