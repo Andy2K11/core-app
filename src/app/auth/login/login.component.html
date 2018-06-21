@@ -1,3 +1,30 @@
-<p style="color: black">
-  login works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title id="title">Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <mat-form-field>
+        <input matInput
+              placeholder="Enter your email"
+              [formControl]="email"
+              required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+              placeholder="Enter your password"
+              [formControl]="password"
+              [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>
+      <div class="row">
+        <button mat-button color="primary" type="submit">Login</button>
+        <button id="btn-cancel" mat-button color="accent" type="button">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+  <span id="register">New users <a [routerLink]="['/auth/register']">register</a> now</span>
+</mat-card>
+
+
