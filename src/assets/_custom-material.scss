@@ -1,0 +1,27 @@
+mat-card.form {
+  max-width: 40em;
+  margin: auto;
+
+  mat-card-header {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    .mat-card-header-text > mat-card-title {
+      font-size: 2em;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 100%;
+    }
+
+    #btn-cancel {
+      float: right;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +9,20 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  email = new FormControl('', [Validators.required, Validators.email]);
   hide = true;
-  password = '';
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    });
   }
 
   getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
+    return this.loginForm.controls.email.hasError('required') ? 'You must enter a value' :
+        this.loginForm.controls.email.hasError('email') ? 'Not a valid email' :
             '';
   }
 
@@ -38,5 +40,9 @@ export class LoginComponent implements OnInit {
     //         error => console.error(error)
     //     );
     //     form.reset();
+    }
+
+    onCancel() {
+      this.loginForm.reset();
     }
 }

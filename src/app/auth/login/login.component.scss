@@ -1,31 +1,3 @@
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form > * {
-  width: 100%;
-}
-
-mat-card {
-  max-width: 40em;
-  margin: auto;
-}
-
-mat-card-header {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-
-  mat-card-title {
-    font-size: 2em;
-  }
-}
-
-#btn-cancel {
-  float: right;
-}
-
 #register {
   display: block;
   float: right;

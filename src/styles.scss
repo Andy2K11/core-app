@@ -23,3 +23,5 @@ body { margin: 0; }
 }
 @import "./assets/core-theme.scss";
 @include core-theme($core-dark-theme);
+
+@import "./assets/custom-material";
