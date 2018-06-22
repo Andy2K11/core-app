@@ -29,4 +29,17 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.userService.logout();
   }
+
+  changeColour(): void {
+    const body = document.querySelector('body');
+    const curr = body.classList.contains('core-light');
+    if (curr) {
+      body.className = '';
+      body.classList.add('core-dark');
+    } else {
+      body.className = '';
+      body.classList.add('core-light');
+    }
+    console.log('button pressed');
+  }
 }
