@@ -9,23 +9,25 @@
               placeholder="Enter your email"
               formControlName="email"
               required>
-        <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+        <mat-error>{{getErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput
-              placeholder="Enter your password"
-              formControlName="password"
-              [type]="hide ? 'password' : 'text'">
+        placeholder="Enter your password"
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
       </mat-form-field>
       <div>
         <button mat-button
-                color="primary"
-                type="submit"
-                [disabled]="!loginForm.valid">Login</button>
-        <button mat-button type="button" (click)="populateTestData()">Test</button>
+        color="primary"
+        type="submit"
+        [disabled]="!loginForm.valid || loginForm.pristine">Login</button>
+        <button mat-button type="button" (click)="onTest()">Test</button>
+        <button id="btn-clear" (click)="onClear()" mat-button color="accent" type="button">Clear</button>
         <button id="btn-cancel" (click)="onCancel()" mat-button color="accent" type="button">Cancel</button>
       </div>
+      <mat-error *ngIf="loginForm.hasError() || true">{{ loginForm.getError('error') }}</mat-error>
     </form>
   </mat-card-content>
   <span id="register">New users <a [routerLink]="['/auth/register']">register</a> now</span>

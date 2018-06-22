@@ -23,5 +23,10 @@ mat-card.form {
     #btn-cancel {
       float: right;
     }
+
+    mat-error {
+      padding-top: 1.5em;
+      text-align: center;
+    }
   }
 }
