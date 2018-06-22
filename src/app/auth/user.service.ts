@@ -6,6 +6,16 @@ import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { map, catchError } from 'rxjs/operators';
 
+const headers: HttpHeaders = new HttpHeaders({
+  'Content-type': 'application/json',
+});
+const httpOptions = {
+  headers: headers,
+  observe: 'response' as 'response',
+  responseType: 'json' as 'json',
+  withCredentials: true
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,15 +45,7 @@ export class UserService {
   register(user: User): Observable<HttpResponse<User>> {
     const url = `//${this.host}/users/register`;
     const body = JSON.stringify(user);
-    const headers: HttpHeaders = new HttpHeaders({
-        'Content-type': 'application/json',
-    });
-    return this.http.post<User>(url, body, {
-        headers: headers,
-        observe: 'response',
-        responseType: 'json',
-        withCredentials: true
-    });
+    return this.http.post<User>(url, body, httpOptions);
 }
   /*
    * Observable<HttpResponse<User>>
@@ -51,15 +53,7 @@ export class UserService {
   login(user: User): Observable<HttpResponse<User>> {
     const url = `//${this.host}/users/login`;
     const body = JSON.stringify(user);
-    const headers: HttpHeaders = new HttpHeaders({
-        'Content-type': 'application/json',
-    });
-    return this.http.post<User>(url, body, {
-      headers: headers,
-      observe: 'response',
-      responseType: 'json',
-      withCredentials: true
-    })
+    return this.http.post<User>(url, body, httpOptions)
     .pipe<HttpResponse<User>>(
       map(data => {
         this.username = data.body.username;
