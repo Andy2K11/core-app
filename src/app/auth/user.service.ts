@@ -45,7 +45,10 @@ export class UserService {
   register(user: User): Observable<HttpResponse<User>> {
     const url = `//${this.host}/users/register`;
     const body = JSON.stringify(user);
-    return this.http.post<User>(url, body, httpOptions);
+    return this.http.post<User>(url, body, httpOptions)
+    .pipe<HttpResponse<User>>(
+      catchError(this.handleError)
+    );
 }
   /*
    * Observable<HttpResponse<User>>
@@ -81,6 +84,7 @@ export class UserService {
   }
 
   private handleError(error: HttpErrorResponse) {
+    console.log(error.error.error);
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
@@ -89,6 +93,10 @@ export class UserService {
 
     if (error.status === 401) {
       return throwError('Check your username and password');
+    }
+
+    if (error.status === 409) {
+      return throwError(error.error.error);
     }
     // return an observable with a user-facing error message
     console.error('An error occurred:', error.error.message);

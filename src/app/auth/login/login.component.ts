@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
         this.loginForm.enable();
         this.loginForm.setErrors({error: error});
         this.loginForm.markAsPristine();
-        console.log(this.loginForm.getError('error'));
       });
   }
 

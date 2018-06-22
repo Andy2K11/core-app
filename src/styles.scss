@@ -11,6 +11,10 @@ body { margin: 0; }
   flex: 1 1 auto;
 }
 
+.spacer.center {
+  text-align: center;
+}
+
 .active {
   color: #bbf;
 }
