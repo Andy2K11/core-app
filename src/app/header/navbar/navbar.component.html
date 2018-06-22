@@ -25,9 +25,10 @@
       </button>
       <span>Application Title</span>
       <span class="spacer"></span>
-      <span>
+      <span *ngIf="!isLoggedIn()">
         <a [routerLink]="['/auth/login']">Login</a>
       </span>
+      <span *ngIf="isLoggedIn()">Logout</span>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

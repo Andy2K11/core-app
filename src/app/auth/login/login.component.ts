@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hide = true;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -26,23 +28,26 @@ export class LoginComponent implements OnInit {
             '';
   }
 
-  onSubmit() {
-    // const user = new User(
-    //     form.value.email,
-    //     form.value.password,
-    //     null
-    // );
-    // this.userService.login(user)
-    //     .subscribe(
-    //         data => {
-    //             this.email = data.body.email;
-    //         },
-    //         error => console.error(error)
-    //     );
-    //     form.reset();
-    }
+  populateTestData() {
+    this.loginForm.setValue({
+      email: 'frank@example.com',
+      password: 'plainpassword'
+    });
+  }
 
-    onCancel() {
-      this.loginForm.reset();
-    }
+  onSubmit() {
+    const user = new User(
+      this.loginForm.value.email,
+      this.loginForm.value.password,
+      null,
+      null
+    );
+    this.userService.login(user);
+
+    this.loginForm.reset();
+  }
+
+  onCancel() {
+    this.loginForm.reset();
+  }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { AuthModule } from './auth/auth.module';
 import { MatButtonModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material';
     BrowserAnimationsModule,
     MatButtonModule,
     HeaderModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
