@@ -31,7 +31,7 @@
         <!-- *ngIf="isHandset$ | async" -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="spacer"></span>
+      <span class="spacer center">{{ 'Welcome ' + getUsername() }}</span>
       <span *ngIf="!isLoggedIn()">
         <a [routerLink]="['/auth/login']" routerLinkActive="active">Login</a>
       </span>
