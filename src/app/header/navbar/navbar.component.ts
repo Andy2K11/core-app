@@ -40,6 +40,28 @@ export class NavbarComponent implements OnInit {
       body.className = '';
       body.classList.add('core-light');
     }
-    console.log('button pressed');
+  }
+
+  requestFullscreen(): void {
+    const e = document.body;
+    if (e.requestFullscreen) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        e.requestFullscreen();
+      }
+    } else if (e.webkitRequestFullscreen) {
+      if (document.webkitFullscreenElement) {
+        document.webkitExitFullscreen();
+      } else {
+        e.webkitRequestFullscreen();
+      }
+    } else if (e.mozRequestFullScreen) {
+      if (document.mozFullScreenElement) {
+        document.mozCancelFullScreen();
+      } else {
+        e.mozRequestFullScreen();
+      }
+    }
   }
 }
