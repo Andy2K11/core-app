@@ -24,7 +24,7 @@ mat-card.form {
       float: right;
     }
 
-    mat-error {
+    > mat-error {
       padding-top: 1.5em;
       text-align: center;
     }
@@ -35,4 +35,8 @@ mat-card.form {
   mat-card.form {
     margin: 5em auto;
   }
+}
+
+mat-form-field {
+  padding: 1em;
 }
