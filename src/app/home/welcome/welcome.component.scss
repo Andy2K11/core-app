@@ -1,0 +1,15 @@
+@media screen and (min-width: 60em) {
+  .example-card {
+    margin: 5em;
+  }
+}
+
+.example-card {
+  max-width: 60em;
+  margin: 5em auto;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/woodland.jpg');
+  background-size: cover;
+}

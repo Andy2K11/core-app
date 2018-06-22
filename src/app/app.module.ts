@@ -8,6 +8,8 @@ import { HeaderModule } from './header/header.module';
 import { AuthModule } from './auth/auth.module';
 import { MatButtonModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
+import { NavbarComponent } from './header/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     HeaderModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

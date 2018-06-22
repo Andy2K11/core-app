@@ -1,8 +1,24 @@
 @import "~@angular/material/theming";
 @import "colours";
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Helvetica, Arial, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+/* Alternatives to injecting into mat-core */
+// @include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+// @include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+// @include angular-material-typography($custom-typography);
+
+
 // Only include this once, no where else
-@include mat-core();
+@include mat-core($custom-typography);
 
 // $mat-color, $default: 500, $lighter: 100, $darker: 700
 $core-primary: mat-palette($core-redbrick);
