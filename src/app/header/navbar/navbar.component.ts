@@ -43,7 +43,8 @@ export class NavbarComponent implements OnInit {
   }
 
   requestFullscreen(): void {
-    const e = document.body;
+    const e: any = document.body;
+    const d: any = document;
     if (e.requestFullscreen) {
       if (document.fullscreenElement) {
         document.exitFullscreen();
@@ -57,8 +58,8 @@ export class NavbarComponent implements OnInit {
         e.webkitRequestFullscreen();
       }
     } else if (e.mozRequestFullScreen) {
-      if (document.mozFullScreenElement) {
-        document.mozCancelFullScreen();
+      if (d.mozFullScreenElement) {
+        d.mozCancelFullScreen();
       } else {
         e.mozRequestFullScreen();
       }
