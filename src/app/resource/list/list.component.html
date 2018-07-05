@@ -1,3 +1,7 @@
-<p>
-  list works!
-</p>
+<h1>Resource List</h1>
+<app-list-filter></app-list-filter>
+<ul>
+  <li *ngFor="let resource of resources">
+    <app-list-item [resource]="resource"></app-list-item>
+  </li>
+</ul>

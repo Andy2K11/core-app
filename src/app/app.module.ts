@@ -5,11 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
-import { AuthModule } from './auth/auth.module';
 import { MatButtonModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
-import { NavbarComponent } from './header/navbar/navbar.component';
 
 @NgModule({
   declarations: [

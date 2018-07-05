@@ -5,6 +5,7 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 const routes: Routes = [
   { path: 'home', component: WelcomeComponent },
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
+  { path: 'resources', loadChildren: './resource/resource.module#ResourceModule' },
   { path: '**', redirectTo: 'home' }
 ];
 

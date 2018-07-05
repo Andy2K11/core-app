@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  resources = [
+    {
+      title: 'First resource'
+    },
+    {
+      title: 'Second resource'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
