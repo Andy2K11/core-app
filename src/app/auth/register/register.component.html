@@ -40,7 +40,7 @@
           <button id="btn-clear" (click)="onClear()" mat-button color="accent" type="button">Clear</button>
           <button id="btn-cancel" (click)="onCancel()" mat-button color="accent" type="button">Cancel</button>
         </div>
-        <mat-error *ngIf="registerForm.hasError() || true">{{ registerForm.getError('error') }}</mat-error>
+        <mat-error>{{ registerForm.getError('error') }}</mat-error>
       </form>
     </mat-card-content>
   </mat-card>

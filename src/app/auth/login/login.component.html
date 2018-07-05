@@ -27,7 +27,7 @@
         <button id="btn-clear" (click)="onClear()" mat-button color="accent" type="button">Clear</button>
         <button id="btn-cancel" (click)="onCancel()" mat-button color="accent" type="button">Cancel</button>
       </div>
-      <mat-error *ngIf="loginForm.hasError() || true">{{ loginForm.getError('error') }}</mat-error>
+      <mat-error>{{ loginForm.getError('error') }}</mat-error>
     </form>
   </mat-card-content>
   <span id="register">New users <a [routerLink]="['/auth/register']">register</a> now</span>
