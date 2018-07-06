@@ -36,6 +36,9 @@
       <span *ngIf="!isLoggedIn()">
         <a [routerLink]="['/auth/login']" routerLinkActive="active">Login</a>
       </span>
+      <span *ngIf="isLoggedIn()">
+        <a [routerLink]="['/admin/dashboard']">Dashboard</a>
+      </span>
       <span *ngIf="isLoggedIn()" (click)="logout()">Logout</span>
     </mat-toolbar>
     <ng-content></ng-content>

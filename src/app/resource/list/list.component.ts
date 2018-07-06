@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { IResource } from '../iresource';
 
 @Component({
   selector: 'app-list',
@@ -8,19 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  resources;
-  //  = [
-  //   {
-  //     title: 'First resource'
-  //   },
-  //   {
-  //     title: 'Second resource'
-  //   }
-  // ];
+  resources: IResource[];
+  dataSource: MatTableDataSource<IResource>;
+  displayedColumns: string[] = ['link', 'id', 'title'];
+
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.resources = this.route.snapshot.data['resources'];
+    this.dataSource = new MatTableDataSource<IResource>(this.resources);
+    this.dataSource.sort = this.sort;
   }
-
 }

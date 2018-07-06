@@ -1,0 +1,20 @@
+div.container {
+  margin: 1em;
+
+  mat-expansion-panel {
+    margin: 1em 0;
+  }
+}
+
+tr, td {
+  padding: 1em;
+  margin: 1em;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
